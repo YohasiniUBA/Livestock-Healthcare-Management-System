@@ -1,4 +1,3 @@
-Livestock Healthcare Management System
 An application designed to connect farmers with veterinarians for efficient livestock healthcare management.
 
 Features
