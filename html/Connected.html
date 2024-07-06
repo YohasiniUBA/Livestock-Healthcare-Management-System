@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestock Management</title>
+    <style>
+        body {
+            background-color: #3a3a66;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Cascadia Code', monospace;
+        
+
+        .frame-container {
+            background-color: #B0E0E6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-family: 'Cascadia Code', monospace;
+            line-height: 3.0;
+        }
+
+        .frame-container .button {
+            background-color: #3a3a66;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cascadia Code', monospace;
+            line-height: 1.6;
+        }
+
+        .registration-link {
+            margin-top: 20px;
+            font-family: 'Gabriola', cursive;
+            font-size: 20px;
+color: maroon;
+        }
+
+        .registration-link a {
+            text-decoration: underline; /* Underline the link text */
+            color: #3a3a66; /* Set the text color of the link */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="frame-container">
+        <h2>Welcome to Livestock Management</h2>
+        <h3>Please select your role:</h3>
+        <button class="button" onclick="navigateToLoginPage('farmer')">I'm a Farmer</button>
+        <button class="button" onclick="navigateToLoginPage('veterinarian')">I'm a Veterinarian</button>
+        <p class="registration-link"><strong>Click here to <a href="RegisterPage.html">Register</a> if you don't have an Account</strong></p>
+    </div>
+
+    <script>
+        function navigateToLoginPage(userType) {
+            if (userType === 'farmer') {
+                window.location.href = 'LoginPageF.html'; // Change the URL to the actual login page for farmers
+            } else if (userType === 'veterinarian') {
+                window.location.href = 'LoginPageV.html'; // Change the URL to the actual login page for veterinarians
+            }
+        }
+    </script>
+</body>
+</html>

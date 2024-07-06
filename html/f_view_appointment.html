@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f5ff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #005ca8;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+        }
+
+        header .profile-logo {
+            font-size: 16px;
+        }
+
+        .appointment-details {
+            background: #b8d5f2; /* Blue shade background */
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .back-button {
+            background: #0072c6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background: #003f7f;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #005ca8;
+        }
+
+        th {
+            background: #005ca8;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background: #b8d5f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Livestock Healthcare Management</div>
+        <div class="profile-logo">Profile</div>
+    </header>
+
+    <div class="appointment-details">
+        <h2>Appointment Details</h2>
+        <!-- Table to display appointment details -->
+        <table id="appointment-table">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Veterinarian Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Immediate Remedy</th>
+                </tr>
+            </thead>
+            <tbody id="appointment-details-body">
+                <!-- Appointment details will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="button-container">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        // JavaScript function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+
+    function fetchAppointmentDetails() {
+        // Make an AJAX request to fetch appointment details
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "../php/f_view_appointment.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Parse the JSON response
+                var appointmentDetails = JSON.parse(xhr.responseText);
+                
+                // Display appointment details in HTML format
+                var html = "";
+                appointmentDetails.forEach(function(appointment) {
+                    html += "<tr>";
+                    html += "<td>" + appointment.status + "</td>";
+                    html += "<td>" + appointment.doctor_appointed + "</td>";
+                    html += "<td>" + appointment.date + "</td>";
+                    html += "<td>" + appointment.time + "</td>";
+                    html += "<td>" + appointment.immediate_remedy + "</td>";
+                    html += "</tr>";
+                });
+                
+                // Insert appointment details into the table body
+                document.getElementById("appointment-details-body").innerHTML = html;
+            }
+        };
+        xhr.send();
+    }
+
+        // Call the fetchAppointmentDetails function when the page loads
+        window.onload = function() {
+            fetchAppointmentDetails();
+        };
+    </script>
+</body>
+</html>

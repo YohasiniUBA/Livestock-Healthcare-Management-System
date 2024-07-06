@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #3a3a66;
+            font-family: Arial, sans-serif;
+            color: #1E90FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #87CEEB;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #3a3a66;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            width: 100%; /* Adjust the width as needed */
+        }
+
+        input {
+            width: 60%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #B0E0E6;
+            border-radius: 5px;
+        }
+
+        .details-container {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            background-color: #1E90FF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-container button.add-another {
+            background-color: #B0E0E6;
+        }
+
+        .button-container button.add-another:hover {
+            background-color: #87CEEB;
+        }
+
+        .field-group {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Livestock Healthcare Management</h2>
+        <h2>Livestock Details</h2>
+        <form action="livestock.html" method="get">
+            <div class="details-container">
+                <!-- JavaScript will generate Breed, Gender, and Age fields based on the count parameter in the URL -->
+            </div>
+            <div class="button-container">
+                <button type="submit" class="add-another">Submit and add another livestock type</button>
+            </div>
+        </form>
+        
+        <form action="FarmerMenuFrame.html" method="get">
+            <div class="button-container">
+                <button type="submit">Submit and go to main menu</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code to generate fields based on the count parameter from the URL
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const count = parseInt(urlParams.get("count"));
+            const details = document.querySelector(".details-container");
+
+            for (let i = 1; i <= count; i++) {
+                const fieldGroup = document.createElement("div");
+                fieldGroup.classList.add("field-group");
+
+                const breedLabel = document.createElement("label");
+                breedLabel.textContent = `Breed ${i}`;
+                fieldGroup.appendChild(breedLabel);
+                const breedInput = document.createElement("input");
+                breedInput.type = "text";
+                breedInput.name = `breed${i}`;
+                fieldGroup.appendChild(breedInput);
+
+                const genderLabel = document.createElement("label");
+                genderLabel.textContent = `Gender ${i}`;
+                fieldGroup.appendChild(genderLabel);
+                const genderInput = document.createElement("input");
+                genderInput.type = "text";
+                genderInput.name = `gender${i}`;
+                fieldGroup.appendChild(genderInput);
+
+                const ageLabel = document.createElement("label");
+                ageLabel.textContent = ` Age ${i}`;
+                fieldGroup.appendChild(ageLabel);
+                const ageInput = document.createElement("input");
+                ageInput.type = "text";
+                ageInput.name = `age${i}`;
+                fieldGroup.appendChild(ageInput);
+
+                details.appendChild(fieldGroup);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #3a3a66;
+            font-family: Arial, sans-serif;
+            color: #1E90FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #87CEEB;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #3a3a66;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            width: 100%; /* Adjust the width as needed */
+        }
+
+        select, input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #B0E0E6;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #1E90FF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Livestock Healthcare Management</h2>
+        <form action="health_record.html" method="get">
+            <label for="livestock-type">Livestock Type</label>
+            <select id="livestock-type" name="livestock-type">
+                <option value="Cow">Cow</option>
+                <option value="Bull">Bull</option>
+                <option value="Buffalo">Buffalo</option>
+                <option value="Oxen">Oxen</option>
+                <option value="Sheep">Sheep</option>
+                <option value="Goat">Goat</option>
+                <option value="Pig">Pig</option>
+                <option value="Hen">Hen</option>
+                <option value="Cock">Cock</option>
+                <option value="Duck">Duck</option>
+                <!-- Add more livestock options here -->
+            </select>
+
+            <label for="breed">Breed</label>
+            <input type="text" id="breed" name="breed" placeholder="Enter breed">
+
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" placeholder="Enter gender">
+
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" placeholder="Enter age">
+
+            <div class="button-container">
+                <button type="submit" onclick="redirectToHealthRecord()">Retrieve Record</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function redirectToHealthRecord() {
+            window.location.href = "health_record.html";
+        }
+    </script>
+</body>
+</html>

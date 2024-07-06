@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestock Healthcare Management</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('bg_image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #005ca8;
+            color: #fff;
+            padding: 20px 0;
+        }
+        
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+        }
+        
+        header .profile-logo {
+            font-size: 16px;
+        }
+        
+        .options-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .option {
+            display: inline-block;
+            margin: 0 20px;
+            padding: 20px 40px;
+            background: #0072c6;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 18px;
+            text-decoration: none; /* Remove default anchor text underline */
+            display: inline-block;
+        }
+        
+        .option:hover {
+            background: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Livestock Healthcare Management</div>
+        <div class="profile-logo">Profile  </div>
+    </header>
+    
+    <div class="options-container">
+        <a class="option" href="../php/view_appointment.php">View Appointment</a>
+        <a class="option" href="../php/appointment_list.php">Confirm Appointment</a>
+        <a class="option" href="doctor_issue_form.html">Add appointment</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #3a3a66;
+            font-family: Arial, sans-serif;
+            color: #1E90FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 800px;
+            padding: 20px;
+            background-color: #87CEEB;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #3a3a66;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #1E90FF;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #1E90FF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Livestock Healthcare Management</h2>
+
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Disease Diagnosis</th>
+                <th>Veterinarian</th>
+                <th>Treatment</th>
+                <th>Medicine</th>
+            </tr>
+        </table>
+
+        <div class="button-container">
+            <button onclick="goBack()">Back</button>
+            <button onclick="goToMainMenu()">Go to Main Menu</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            // Redirect to select_one_livestock.html
+            window.location.href = "select_one_livestock.html";
+        }
+
+        function goToMainMenu() {
+            // Redirect to FarmerMainFrame.html
+            window.location.href = "FarmerMenuFrame.html";
+        }
+    </script>
+</body>
+</html>
